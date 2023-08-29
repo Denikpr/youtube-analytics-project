@@ -32,4 +32,10 @@ class Channel:
             'videoCount': self.videoCount,
             'viewCount': self.viewCount
         }
+        with open(youtube_ch, 'w', encoding='utf-8') as json_file:
+            json.dump(channel_dict, json_file, indent=2, ensure_ascii=False)
+
+    def print_info(self) -> None:
+        """Выводит в консоль информацию о канале."""
+        print(json.dumps(self.info, indent=2, ensure_ascii=False))
 
