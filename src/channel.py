@@ -14,9 +14,13 @@ class Channel:
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
         self.customUrl = self.info['items'][0]['snippet']['customUrl']
-        self.subscriberCount = self.info['items'][0]['statistics']['subscriberCount']
-        self.videoCount = self.info['items'][0]['statistics']['videoCount']
-        self.viewCount = self.info['items'][0]['statistics']['viewCount']
+        self.subscriberCount = int(self.info['items'][0]['statistics']['subscriberCount'])
+        self.videoCount = int(self.info['items'][0]['statistics']['videoCount'])
+        self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
+
+
+    def __str__(self):
+        return f"{self.title}"
 
     @classmethod
     def get_service(cls):
@@ -39,3 +43,5 @@ class Channel:
         """Выводит в консоль информацию о канале."""
         print(json.dumps(self.info, indent=2, ensure_ascii=False))
 
+    def __add__(self, other):
+        return self.subscriberCount + other.subscriberCount
