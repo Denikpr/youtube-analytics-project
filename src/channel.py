@@ -45,3 +45,7 @@ class Channel:
 
     def __add__(self, other):
         return self.subscriberCount + other.subscriberCount
+
+
+    def __sub__(self, other):
+        return self.subscriberCount - other.subscriberCount
