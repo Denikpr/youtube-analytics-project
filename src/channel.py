@@ -17,10 +17,11 @@ class Channel:
         self.subscriberCount = int(self.info['items'][0]['statistics']['subscriberCount'])
         self.videoCount = int(self.info['items'][0]['statistics']['videoCount'])
         self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
+        self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
 
 
     def __str__(self):
-        return f"{self.title}"
+        return f"'{self.title} (https://www.youtube.com/channel/{self.channel_id})'"
 
     @classmethod
     def get_service(cls):
