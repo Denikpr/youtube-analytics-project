@@ -51,13 +51,14 @@ class Channel:
         return self.subscriberCount - other.subscriberCount
 
     def __gt__(self, other):
-         return self.subscriberCount > other.subscriberCount
+        return self.subscriberCount > other.subscriberCount
 
     def __ge__(self, other):
-         return self.subscriberCount >= other.subscriberCount
+        return self.subscriberCount >= other.subscriberCount
 
     def __lt__(self, other):
-         return self.subscriberCount < other.subscriberCount
+        return self.subscriberCount < other.subscriberCount
 
     def __le__(self, other):
-         return self.subscriberCount <= other.subscriberCount
+        return self.subscriberCount <= other.subscriberCount
+
