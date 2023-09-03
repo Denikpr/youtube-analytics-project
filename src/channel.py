@@ -14,9 +14,14 @@ class Channel:
         self.title = self.info['items'][0]['snippet']['title']
         self.description = self.info['items'][0]['snippet']['description']
         self.customUrl = self.info['items'][0]['snippet']['customUrl']
-        self.subscriberCount = self.info['items'][0]['statistics']['subscriberCount']
-        self.videoCount = self.info['items'][0]['statistics']['videoCount']
-        self.viewCount = self.info['items'][0]['statistics']['viewCount']
+        self.subscriberCount = int(self.info['items'][0]['statistics']['subscriberCount'])
+        self.videoCount = int(self.info['items'][0]['statistics']['videoCount'])
+        self.viewCount = int(self.info['items'][0]['statistics']['viewCount'])
+        self.url = 'https://www.youtube.com/' + self.info['items'][0]['snippet']['customUrl']
+
+
+    def __str__(self):
+        return f"'{self.title} (https://www.youtube.com/channel/{self.channel_id})'"
 
     @classmethod
     def get_service(cls):
@@ -38,4 +43,22 @@ class Channel:
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
         print(json.dumps(self.info, indent=2, ensure_ascii=False))
+
+    def __add__(self, other):
+        return self.subscriberCount + other.subscriberCount
+
+    def __sub__(self, other):
+        return self.subscriberCount - other.subscriberCount
+
+    def __gt__(self, other):
+        return self.subscriberCount > other.subscriberCount
+
+    def __ge__(self, other):
+        return self.subscriberCount >= other.subscriberCount
+
+    def __lt__(self, other):
+        return self.subscriberCount < other.subscriberCount
+
+    def __le__(self, other):
+        return self.subscriberCount <= other.subscriberCount
 
