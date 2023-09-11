@@ -33,7 +33,7 @@ printj(channel)
 
 '''
 получить данные по play-листам канала
-docs: https://developers.google.com/youtube/v3/docs/playlists/list
+docs: 
 '''
 playlists = youtube.playlists().list(channelId=channel_id,
                                      part='contentDetails,snippet',
