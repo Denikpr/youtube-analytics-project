@@ -13,6 +13,7 @@ class Video:
         self.likeCount = int(self.response['items'][0]['statistics']['likeCount'])
         self.viewCount = int(self.response['items'][0]['statistics']['viewCount'])
         self.viewCount = int(self.response['items'][0]['statistics']['viewCount'])
+
     @classmethod
     def get_service(cls):
         api_key: str = os.getenv('YT_API_KEY')
