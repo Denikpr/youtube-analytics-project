@@ -12,7 +12,7 @@ class Video:
         self.description = self.response['items'][0]['snippet']['description']
         self.likeCount = int(self.response['items'][0]['statistics']['likeCount'])
         self.viewCount = int(self.response['items'][0]['statistics']['viewCount'])
-        self.viewCount = int(self.response['items'][0]['statistics']['viewCount'])
+        self.duration = self.response["items"][0]['contentDetails']['duration']
 
     @classmethod
     def get_service(cls):
