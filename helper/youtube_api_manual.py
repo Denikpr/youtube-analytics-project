@@ -41,7 +41,7 @@ playlists = youtube.playlists().list(channelId=channel_id,
                                      ).execute()
 # printj(playlists)
 for playlist in playlists['items']:
-    print(playlist)
+    printj(playlist)
     print()
 
 
