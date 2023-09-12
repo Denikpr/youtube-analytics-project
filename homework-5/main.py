@@ -8,8 +8,6 @@ if __name__ == '__main__':
 
     #for playlist in pl.playlists['items']:
         #print(json.dumps(playlist, indent=2, ensure_ascii=False))
-    print(pl.url)
-    #pl.info_videos
 
     assert pl.title == "Moscow Python Meetup №81"
     assert pl.url == "https://www.youtube.com/playlist?list=PLv_zOGKKxVpj-n2qLkEM2Hj96LO6uqgQw"
