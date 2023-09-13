@@ -19,7 +19,6 @@ class PlayList:
                                                                    maxResults=50).execute()
         self.videos = self.get_videos()
 
-
     @classmethod
     def get_service(cls):
         api_key: str = os.getenv('YT_API_KEY')
@@ -44,4 +43,4 @@ class PlayList:
 
     def show_best_video(self):
         best_video = max(self.videos, key=lambda i: i.likeCount)
-        return best_video
+        return best_video.url_video

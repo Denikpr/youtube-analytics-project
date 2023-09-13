@@ -1,4 +1,5 @@
 import os
+import json
 from googleapiclient.discovery import build
 
 
@@ -13,7 +14,7 @@ class Video:
         self.likeCount = int(self.response['items'][0]['statistics']['likeCount'])
         self.viewCount = int(self.response['items'][0]['statistics']['viewCount'])
         self.duration = self.response["items"][0]['contentDetails']['duration']
-        self.url_video = 'https://www.youtube.com/' + self.response['items'][0]['snippet']['customUrl']
+        self.url_video = f"https://youtu.be/{self.video_id}"
 
     @classmethod
     def get_service(cls):
